@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macaquito</title>
+    <style>
+        body {
+            font: normal 20pt Arial;
+            background: rgb(36, 36, 36);
+            color: orange;
+            p {
+                color: white;
+            }
+            input {
+                font: normal 15pt Arial;
+                background: rgb(0, 60, 255);
+                color: azure;
+                width: "300px";
+                font-weight: bold;
+            }
+            div#res {
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Macaquito</h1>
+    <p>Descubra qual macaquito você é!</p>
+    <input type="button" value="MACAQUITO" onclick="sortear()">    <!-- botão que sorteia o macaco -->
+    <div id="res">
+        <img id="imgMacaco" src="" width="400px" height="400px">   <!-- exibe a imagem sorteada -->
+    </div>
+</body>
+<script>
+    
+    var macacos = [   // lista array com os nomes das imagens
+        "m1.png",
+        "m2.jpeg",
+        "m3.jpeg",
+        "m4.jpg",
+        "m5.jpg",
+        "m6.jpg",
+        "m7.jpg"
+    ]
+
+    function sortear() {
+        var macaco = Math.floor(Math.random() * macacos.length);  // sorteia um número aleatório entre 0 e o tamanho da lista de macacos
+        var caminhoImagem = macacos[macaco];
+        var img = document.getElementById("imgMacaco")   // pega o elemento HTML e trocar a imagem
+        img.src = caminhoImagem;
+        var botao = document.querySelector("input[type=button]");
+        botao.style.background = "green";               // deixa o botao verde quando clica
+        setTimeout(function() {                // depois de 300 milisegundos volta a cor original          
+            botao.style.background = "rgb(0, 60, 255)";
+        }, 300);
+    }
+
+</script>
+</html>
