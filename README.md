@@ -15,7 +15,7 @@ Praticar conceitos fundamentais de JavaScript:
 
 - HTML5
 - CSS3
-- JavaScript (vanilla)
+- JavaScript
 
 ## 🚀 Como rodar
 
